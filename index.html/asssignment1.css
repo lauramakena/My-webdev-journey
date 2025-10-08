@@ -1,113 +1,111 @@
+/* -------------------------
+   BODY STYLING
+------------------------- */
 body {
-  background: yellow;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font */
+  background-color: #f0f8ff; /* Light blue background */
+  line-height: 1.6;
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 80vw;
+  border: 3px solid #a9c4e6;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f2f8ff;
-    line-height: 1.6;
-    margin: 0 auto;
-    padding: 2rem;
-    max-width: 90%;
-    width: 60vw;
-    border: 3px solid #bcd4e6;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-/* -------------------
-   Headings
-------------------- */
+/* -------------------------
+   HEADINGS
+------------------------- */
 h1 {
-    color: #1e4d92;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  color: #1e4d92;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 h2 {
-    color: #357ab8;
-    font-size: 1.5rem;
-    margin-top: 2rem;
-    text-align: left;
+  color: #357ab8;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  border-bottom: 2px solid #bcd4e6;
+  padding-bottom: 0.4rem;
 }
 
-/* -------------------
-   Paragraphs
-------------------- */
+/* -------------------------
+   PARAGRAPHS
+------------------------- */
 p {
-    color: #333;
-    font-size: 1.1rem;
-    margin-bottom: 0.8em;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 0.8em;
 }
 
-/* -------------------
-   Links
-------------------- */
-a {
-    color: #0056b3;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 1rem;
-}
-
-a:hover {
-    color: #003d80;
-    text-decoration: underline;
-    transform: scale(1.05);
-}
-
-/* -------------------
-   Movie List (Element Selector)
-------------------- */
+/* -------------------------
+   MOVIE LIST
+------------------------- */
+/* Remove default bullets */
 ul {
-    list-style-type: square;
-    margin-left: 2rem;
+  list-style: none;
+  margin-left: 2rem;
+  padding: 0;
 }
 
-/* Movie list items (using class selector) */
+/* Custom bullets using pseudo-elements */
 .movie-item {
-    color: #1e4d92;
-    font-size: 1.1em;
-    padding: 0.4em;
-    transition: all 0.3s ease;
+  position: relative;
+  color: #1e4d92;
+  font-size: 1.1em;
+  padding: 0.4em 0.4em 0.4em 2em;
+  transition: all 0.3s ease;
 }
 
-/* Hover effect on movie items */
+/* Add emoji bullets before each item */
+.movie-item::before {
+  content: "🎬"; /* You can change to "⭐" or "🎞️" */
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2em;
+}
+
+/* Hover effect */
 .movie-item:hover {
-    background-color: #d8e7ff;
-    border-radius: 8px;
-    cursor: pointer;
+  background-color: #d8e7ff;
+  border-radius: 8px;
+  cursor: pointer;
+  transform: scale(1.02);
 }
 
-/* -------------------
-   Example of ID Selector
-------------------- */
+/* -------------------------
+   ID SELECTOR
+------------------------- */
 #special-note {
-    background-color: #eaf4ff;
-    border-left: 5px solid #357ab8;
-    padding: 1em;
-    margin-top: 1.5em;
-    font-style: italic;
-    font-size: 1em;
+  background-color: #eaf4ff;
+  border-left: 5px solid #357ab8;
+  padding: 1em;
+  margin-top: 1.5em;
+  font-style: italic;
+  font-size: 1em;
 }
 
-/* -------------------
-   Responsive Design
-------------------- */
+/* -------------------------
+   RESPONSIVE DESIGN
+------------------------- */
 @media (max-width: 768px) {
-    body {
-        width: 85vw;
-        padding: 1.5rem;
-    }
+  body {
+    padding: 1.5rem;
+    max-width: 90vw;
+  }
 
-    h1 {
-        font-size: 1.6rem;
-    }
+  h1 {
+    font-size: 1.6rem;
+  }
 
-    p, li {
-        font-size: 1rem;
-    }
+  p, li {
+    font-size: 1rem;
+  }
+
+  .movie-item::before {
+    font-size: 1em;
+  }
 }
